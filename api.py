@@ -13,7 +13,7 @@ from flask import request
 from flask import render_template
 
 app = Flask(__name__)
-UPLOAD_FOLDER = "/Users/hilmyveradin/Documents/Documents/Programing-Others/WEB-PeriksaParu.com/images"
+UPLOAD_FOLDER = "/images"
 DEVICE = "cuda"
 MODEL = None
 
@@ -97,7 +97,7 @@ def test():
 
 if __name__ == "__main__":
     MODEL = MyCustomMobileNetV2()
-    MODEL.load_state_dict(torch.load("/Users/hilmyveradin/Documents/Documents/Programing-Others/WEB-PeriksaParu.com/test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
+    MODEL.load_state_dict(torch.load("/test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
     app.run(port=1200, debug=True)
 
 
