@@ -98,6 +98,6 @@ def test():
 if __name__ == "__main__":
     MODEL = MyCustomMobileNetV2()
     MODEL.load_state_dict(torch.load("/test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
-    app.run(port=1200, debug=True)
+    app.run(debug=True)
 
 
