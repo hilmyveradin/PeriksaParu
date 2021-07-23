@@ -54,7 +54,7 @@ def predict(image_path, model):
     input = transform(test_images)
     input.unsqueeze_(0)
 
-    #model.eval()
+    model.eval()
     output = model(input)
     output1 = output.detach().numpy()
     result = output1[0,0]
