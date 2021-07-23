@@ -84,7 +84,7 @@ def hello_world():
 @app.route("/", methods=["POST"])
 def upload_predict():
     image_file = request.files["image"]
-    image_location = "./static/images" + image_file.filename
+    image_location = "./static/images/" + image_file.filename
     image_file.save(image_location)
     pred = predict(image_location, MODEL)
     return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
