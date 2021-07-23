@@ -50,7 +50,7 @@ def predict(image_path, model):
     test_images = image_path
 
     input = transform(test_images)
-    input = input[None]
+    input.unsqueeze_(0)
 
     model.eval()
     output = model(input)
