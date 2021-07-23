@@ -90,6 +90,10 @@ def upload_predict():
     pred = predict(image_location, MODEL)
     return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
 
+@app.route("/beranda", methods=["GET"])
+def hello_world2():
+    return render_template("index.html")
+
 @app.route("/beranda", methods=["POST"])
 def up_predict():
     image_file = request.files["image"]
