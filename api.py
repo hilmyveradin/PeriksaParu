@@ -77,16 +77,17 @@ def predict(image_path, model):
     return result
     
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
+def hello_world():
+    return render_template("index.html")
+
+@app.route("/", methods=["POST"])
 def upload_predict():
-    if request.method == "POST":
-        image_file = request.files["image"]
-        if image_file:
-            image_location = UPLOAD_FOLDER + image_file.filename
-            image_file.save(image_location)
-            pred = predict(image_location, MODEL)
-            return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
-    return render_template("index.html", prediction = 0, TextResult="Masih belum diketahui :D", image_loc=None)
+    image_file = request.files["image"]
+    image_location = "./static/images" + image_file.filename
+    image_file.save(image_location)
+    pred = predict(image_location, MODEL)
+    return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
 
 @app.route("/test")
 def test():
