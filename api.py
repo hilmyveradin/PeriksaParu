@@ -13,7 +13,7 @@ from flask import request
 from flask import render_template
 
 app = Flask(__name__)
-UPLOAD_FOLDER = "/images"
+UPLOAD_FOLDER = "./static/images/"
 DEVICE = "cuda"
 MODEL = None
 
@@ -82,10 +82,7 @@ def upload_predict():
     if request.method == "POST":
         image_file = request.files["image"]
         if image_file:
-            image_location = os.path.join(
-                UPLOAD_FOLDER, 
-                image_file.filename
-            )
+            image_location = UPLOAD_FOLDER + image_file.filename
             image_file.save(image_location)
             pred = predict(image_location, MODEL)
             return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
