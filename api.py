@@ -75,9 +75,8 @@ def predict(image_path, model):
         Text = "Maaf, gambar yang kamu masukkan tidak dapat diprediksi"
         result = 0
 
-    result = "{0:.3f}".format(result)
+    result = "{0:.2f}".format(result)
     return result
-    
 
 @app.route("/", methods=["GET"])
 def hello_world():
@@ -91,11 +90,29 @@ def upload_predict():
     pred = predict(image_location, MODEL)
     return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
 
-@app.route("/test")
-def test():
-    return render_template("test.html")
+@app.route("/beranda", methods=["POST"])
+def up_predict():
+    image_file = request.files["image"]
+    image_location = "./static/images/" + image_file.filename
+    image_file.save(image_location)
+    pred = predict(image_location, MODEL)
+    return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
+
+@app.route("/informasi-rumah-sakit")
+def informasi_rumah_sakit():
+    return render_template("informasi-rumah-sakit.html")
+
+@app.route("/berita-terkini")
+def berita_terkini():
+    return render_template("berita-terkini.html")
+
+@app.route("/info-pencegahan-penyakit")
+def pencegahan_penyakit():
+    return render_template("info-pencegahan-penyakit.html")
+
+@app.route("/tentang-periksaparu")
+def tentang_periksaparu():
+    return render_template("tentang-periksaparu.html")
 
 if __name__ == "__main__":
-    MODEL = MyCustomMobileNetV2()
-    MODEL.load_state_dict(torch.load("/test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
     app.run(debug=True)
