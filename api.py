@@ -15,7 +15,6 @@ from flask import render_template
 app = Flask(__name__)
 UPLOAD_FOLDER = "./static/images/"
 DEVICE = "cuda"
-MODEL = None
 
 mnet = mobilenet_v2(pretrained=True)
 for param in mnet.parameters():
@@ -32,6 +31,9 @@ class MyCustomMobileNetV2(nn.Module):
         
     def forward(self, x):
         return self.mnet(x)
+    
+MODEL = MyCustomMobileNetV2()
+MODEL.load_state_dict(torch.load("./test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
 
 Text = ""
 def predict(image_path, model):
@@ -97,5 +99,3 @@ if __name__ == "__main__":
     MODEL = MyCustomMobileNetV2()
     MODEL.load_state_dict(torch.load("/test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
     app.run(debug=True)
-
-
