@@ -91,7 +91,7 @@ def upload_predict():
     return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
 
 @app.route("/beranda", methods=["GET"])
-def hello_world2():
+def hello():
     return render_template("index.html")
 
 @app.route("/beranda", methods=["POST"])
@@ -100,23 +100,7 @@ def up_predict():
     image_location = "./static/images/" + image_file.filename
     image_file.save(image_location)
     pred = predict(image_location, MODEL)
-    return render_template("index.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
-
-@app.route("/informasi-rumah-sakit")
-def informasi_rumah_sakit():
-    return render_template("informasi-rumah-sakit.html")
-
-@app.route("/berita-terkini")
-def berita_terkini():
-    return render_template("berita-terkini.html")
-
-@app.route("/info-pencegahan-penyakit")
-def pencegahan_penyakit():
-    return render_template("info-pencegahan-penyakit.html")
-
-@app.route("/tentang-periksaparu")
-def tentang_periksaparu():
-    return render_template("tentang-periksaparu.html")
+    return render_template("beranda.html", prediction = pred, TextResult=Text, image_loc=image_file.filename)
 
 if __name__ == "__main__":
     app.run(debug=True)
