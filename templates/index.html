@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <!-- Document Meta ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--IE Compatibility Meta-->
+    <meta name="author" content="zytheme" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Multi-purpose Makerting html5 landing page" />
+    <link href="./static/assets/images/favicon/pp-10.png" rel="icon" />
+
+    <!-- Fonts ============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700" rel="stylesheet" type="text/css" />
+
+    <!-- Stylesheets ============================================= -->
+    <link href="./static/assets/css/external.css" rel="stylesheet" />
+    <link href="./static/assets/css/style.css" rel="stylesheet" />
+    <link href="./static/assets/css/test.css" rel="stylesheet" />
+    
+
+    
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Document Title ============================================= -->
+    <title>PeriksaParu.com | Periksa TBC, Covid-19 dan Pneumonia</title>
+  </head>
+
+  <body class="body-scroll">
+    <!-- Document Wrapper ============================================= -->
+    <div id="wrapperParallax" class="wrapper clearfix">
+      <!-- Header ============================================= -->
+      <header id="navbar-spy" class="header header-1 header-transparent header-fixed">
+        <nav id="primary-menu" class="navbar navbar-expand-lg navbar-dark">
+          <div class="container">
+            <a class="navbar-brand" href="/beranda">
+              <img class="logo logo-dark" src="./static/assets/images/logo/pp-3.png" alt="Kolaso Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toogle-inner"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="active">
+                  <a data-scroll="scrollTo" href="#speciality">Periksa Parumu</a>
+                </li>
+                <li>
+                  <a data-scroll="scrollTo" href="#patients">Fakta Unik</a>
+                </li>
+                <li>
+                  <a data-scroll="scrollTo" href="#doctors">Hubungi Dokter</a>
+                </li>
+              </ul>
+            </div>
+            <!--/.nav-collapse -->
+          </div>
+        </nav>
+      </header>
+      <!-- Slider #1 ============================================= -->
+      <section id="hero" class="section hero">
+        <div class="bg-section">
+          <img src="./static/assets/images/background/hero.jpg" alt="background" />
+        </div>
+        <div class="container">
+          <div class="row row-content">
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="hero-headline">
+                Kesehatan Parumu
+                <br />
+                <span class="typed-text" data-typed-string="Prioritas kami"></span>
+              </div>
+              <div class="hero-bio">Kami siap memeriksa paru-paru kamu.</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6"></div>
+          </div>
+          <!-- .row end -->
+        </div>
+        <!-- .container end -->
+      </section>
+      <!-- #slider end -->
+      <!-- Feature #1 ============================================= -->
+      <section id="speciality" class="section feature feature-3 bg-white pb-80">
+        <div class="container">
+              <div class="heading heading-1 text-center">
+                <h2 class="heading-title">Periksa Parumu</h2>
+                <br />
+                <br>
+                <form class="form-upload" method=post enctype=multipart/form-data>
+                <h1 class="h3 mb-3 font-weight-normal">Unggah Gambar Paru di sini:</h1>
+                <br>
+                <input type="file" id="image" name="image" class="form-control" required autofocus>
+                <br>
+                <button class="btn btn--primary" type="submit" width="256">Prediksi</button>
+                <br>
+                {% if image_loc %}
+                <br>
+                <img class="mb-4" src="./static/images/{{image_loc}}" alt="" width="256" height="256">
+                <br>
+                <h3 class="font-body"> Hasil Prediksi: {{TextResult}} </h3>
+                <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
+                {%endif%}
+                <br>
+                </form>
+              </div>
+        </div>
+        <!-- .container end -->
+      </section>
+      <!-- #speciality end -->
+
+      <section id="bar" class="bg-white pt-0 pb-0">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <hr class="hr-bar"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- #bar end -->
+
+      <!-- Feature #2 ============================================= -->
+      <section id="feature2" class="section feature feature-left bg-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="heading heading-1 mb-50 mt-30">
+                <h2 class="heading-title">Tentang Kami</h2>
+                <p class="heading-desc" style="text-align:justify"> PeriksaParu.com merupakan sebuah laman yang dibangun oleh 4 mahasiswa IPB University untuk kepentingan penelitian dan pengembangan. PeriksaParu.com hadir untuk membantu permasalahan masyarakat Indonesia, terutama daerah 3T, untuk mengatasi kurangnya tenaga medis mumpuni yang dapat mendiagnosa penyakit paru, yaitu TBC, Pneumonia, dan Covid-19. Hanya dengan mengunggah data rontgen toraks yang dimiliki pengguna, PeriksaParu.com dapat mendeteksi penyakit idapan pengguna. </p>
+	              <p class="heading-desc" style="text-align:justify">Saat pengguna terdeteksi mengidap penyakit paru yang disebutkan di atas, maka laman akan memberikan informasi seberapa besar kemungkinan penyakit tersebut mengidap di pengguna dengan disertai pemberian informasi kontak dokter yang dapat dihubungi untuk berkonsultasi lebih lanjut. Selain itu, PeriksaParu.com memiliki fitur fakta unik untuk mengedukasi pengguna seputar kesehatan paru . </p>
+	              <p class="heading-desc" style="text-align:justify"> Dengan adanya laman PeriksaParu.com, diharapkan dapat membantu masyarakat Indonesia terutama di daerah 3T untuk mendapatkan pendiagnosisan yang tepat tanpa bantuan ahli sehingga, lebih lanjut, dapat mewujudkan Indonesia tanpa penyakit paru dan menuju Indonesia yang lebih sehat di masa depan. </p>
+              </div>
+            </div>
+            <!-- .col-md-6 end -->
+            <div class="col-12 col-md-6 col-lg-6">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+              <img class="img-fluid img-shadow pull-right" src="./static/assets/images/features/about.jpg" alt="about" />
+            </div>
+            <!-- .col-md-6 end -->
+          </div>
+          <!-- .row end -->
+        </div>
+        <!-- .container end -->
+      </section>
+      <!-- #feature2 end -->
+
+      <!-- Testimonial ============================================= -->
+      <section id="patients" class="section testimonials bg-gray">
+        <div class="container">
+          <div class="row clearfix">
+            <div class="col-12 col-md-12 col-lg-12">
+              <div class="heading heading-1 text-center">
+                <h2 class="heading-title">Fakta Unik</h2>
+              </div>
+            </div>
+            <!-- .col-md-6 end -->
+          </div>
+          <!-- .row end -->
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="carousel carousel-dots owl-carousel" data-slide="2" data-slide-rs="2" data-autoplay="true" data-nav="false" data-dots="true" data-space="30" data-loop="true" data-speed="800">
+                <!-- Testimonial #1 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Antibiotik hanya efektif dalam melawan bakteri, bukan virus</p>
+                    <div class="testimonial-author">
+                      <h5>PRIMAYAHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #2 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Salah satu cara mengobati pneumonia adalah terapi medis yaitu dokter akan meresepkan obat yang disesuaikan dengan penyebab spesifik pneumonia</p>
+                    <div class="testimonial-author">
+                      <h5>KLIKDOKTER.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #3 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Berdasarkan laporan dari WHO pneumonia menjadi penyebab kematian tunggal terbesar pada anak-anak di seluruh dunia</p>
+                    <div class="testimonial-author">
+                      <h5>KLIKDOKTER.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #4 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>TBC dapar dicegah dengan mengenakan masker dan menjauhi orang lain yang sampai tidak ada lagi risiko infeksi</p>
+                    <div class="testimonial-author">
+                      <h5>SILOAMHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #5 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>TBC bukanlah penyakit turunan tetapi penyakit menulat yang disebabkan oleh bakteri Myctobacterium tuberculosis</p>
+                    <div class="testimonial-author">
+                      <h5>SILOAMHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #6 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Sinar matahari tidak bisa membunuh virus corona akan tetapi sinar matahari berguna untuk produksi vitamin D didalam tubuh yang bisa meningkatkan daya tahan terhadap serangan virus</p>
+                    <div class="testimonial-author">
+                      <h5>PRIMAYAHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #7 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Gejala pneumonia meliputi batuk berdahak, demam berkeringat, sesak napas, nyeri dada, lelah berkepanjangan, kehilangan selera makan, mual atau muntah, nyeri kepala hebat</p>
+                    <div class="testimonial-author">
+                      <h5>KLIKDOKTER.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #8 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Penyintas Covid 19 masih ada potensi terjangkit meski kemungkinannya lebih kecil</p>
+                    <div class="testimonial-author">
+                      <h5>PRIMAYAHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #9 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Pneumonia akibat virus dan bakteri dapat menular melalui inhalasi udara, yaitu lewat bersin atau batuk. Akan tetapi penularan pneumonia akibat jamur sifatnya tidak menyebar dari orang ke orang.</p>
+                    <div class="testimonial-author">
+                      <h5>KLIKDOKTER.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #10 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>Obat malaria klorokuin bukanlah obat corona dan tak efektif menyembuhkan pasien corona</p>
+                    <div class="testimonial-author">
+                      <h5>PRIMAYAHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #11 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>TBC tidak hanya menyerang paru paru, TBC juga dapat menyerang organ lain termasuk otak dan jantung</p>
+                    <div class="testimonial-author">
+                      <h5>KLIKDOKTER.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial #12 -->
+                <div class="testimonial-panel">
+                  <div class="testimonial-body">
+                    <p>TBC bisa sembuh dengan pengobatan minimal 6-9 bulan</p>
+                    <div class="testimonial-author">
+                      <h5>SILOAMHOSPITAL.COM</h5>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- .carousel End -->
+            </div>
+          </div>
+          <!-- .row End -->
+        </div>
+        <!-- .container End -->
+      </section>
+      <!-- #patients End-->
+      <!-- Team Section ============================================= -->
+      <section id="doctors" class="team bg-white">
+        <div class="container">
+          <div class="row clearfix">
+            <div class="col-12 col-md-12 col-lg-12">
+              <div class="heading heading-1 text-center">
+                <h2 class="heading-title">Hubungi Dokter</h2>
+              </div>
+            </div>
+            <!-- .col-md-6 end -->
+          </div>
+          <!-- .row end -->
+          <div class="row">
+            <!-- Member #1 -->
+            <div class="col-12 col-md-4 col-lg-4">
+              <!-- .member end -->
+            </div>
+            <!-- .col-md-3 end -->
+
+            <!-- Member #2 -->
+            <div class="col-12 col-md-4 col-lg-4">
+              <div class="member">
+                <div class="member-img">
+                  <img src="./static/assets/images/team/team-2.png" alt="member" />
+                  <div class="member-overlay">
+                    <div class="member-social">
+                      <div class="pos-vertical-center">
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa fa-linkedin"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- .memebr-ovelay end -->
+                </div>
+                <!-- .member-img end -->
+                <div class="member-info">
+                  <h5>Dr. Ambiyo Budiman <span>Spesialis Paru</span></h5>
+                  <h6>
+                    <a href="tel:+61 452 200 126"> <i class="fa fa-phone"></i>+62 878 0999 2042</a>
+                  </h6>
+                </div>
+                <!-- .member-info end -->
+              </div>
+              <!-- .member end -->
+            </div>
+            <!-- .col-md-3 end -->
+
+            <!-- Member #3 -->
+            <div class="col-12 col-md-4 col-lg-4">
+              <!-- .member end -->
+            </div>
+            <!-- .col-md-3 end -->
+          </div>
+        </div>
+      </section>
+      <!-- #doctors end -->
+      <!-- Footer ============================================= -->
+      <section id="consultation" class="section feature feature-2 bg-gray">
+      <footer id="footerParallax" class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row widget-boxes text-center">
+              <div class="col-12 col-md-4 col-lg-4">
+                <div class="widget-info-box">
+                  <div class="info-img">
+                    <img src="./static/assets/images/footer/1.svg" alt="phone" />
+                  </div>
+                  <h4>Kontak</h4>
+                  <p>+221 340 210 533</p>
+                </div>
+                <!-- .widget-info-box end -->
+              </div>
+              <!-- .col-md-4 end -->
+              <div class="col-12 col-md-4 col-lg-4">
+                <div class="widget-info-box">
+                  <div class="info-img">
+                    <img src="./static/assets/images/footer/2.svg" alt="phone" />
+                  </div>
+                  <h4>Alamat</h4>
+                  <p>Jl. Raya Dramaga Kampus IPB Dramaga Bogor 16680 West Java, Indonesia.</p>
+                </div>
+                <!-- .widget-info-box end -->
+              </div>
+              <!-- .col-md-4 end -->
+              <div class="col-12 col-md-4 col-lg-4">
+                <div class="widget-info-box">
+                  <div class="info-img">
+                    <img src="./static/assets/images/footer/3.svg" alt="phone" />
+                  </div>
+                  <h4>Email</h4>
+                  <p>periksaparu@gmail.com</p>
+                </div>
+                <!-- .widget-info-box end -->
+              </div>
+              <!-- .col-md-4 end -->
+            </div>
+            <!-- .row end -->
+          </div>
+          <!-- .container end -->
+        </div>
+        <!-- .footer-top end -->
+        <div class="footer-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <hr />
+              </div>
+            </div>
+          </div>
+          <!-- .container end -->
+        </div>
+        <!-- .footer-bar end -->
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="footer-copyright">
+                  <span>&copy; PeriksaParu 2021, All Rights Reserved.</span>
+                </div>
+              </div>
+              <!-- .col-md-6 end -->
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="footer-social">
+                  <a class="facebook" href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a class="twitter" href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a class="dribbble" href="#">
+                    <i class="fa fa-dribbble"></i>
+                  </a>
+                  <a class="instagram" href="#">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- .col-md-6 end -->
+            </div>
+            <!-- .row end -->
+          </div>
+          <!-- .container end -->
+        </div>
+        <!-- .footer-bottom end -->
+      </footer>
+      </section>
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Footer Scripts ============================================= -->
+    <script src="./static/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./static/assets/js/plugins.js"></script>
+    <script src="./static/assets/js/functions.js"></script>
+  </body>
+</html>
