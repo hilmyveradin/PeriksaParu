@@ -18,7 +18,7 @@ DEVICE = "cuda"
 
 mnet = mobilenet_v2(pretrained=True)
 for param in mnet.parameters():
-    param.requires_grad = False
+    param.requires_grad = True
 
 class MyCustomMobileNetV2(nn.Module):
     def __init__(self):
@@ -26,14 +26,14 @@ class MyCustomMobileNetV2(nn.Module):
         self.mnet = mobilenet_v2(pretrained=True)
         self.mnet.classifier = nn.Sequential(
             nn.Linear(1280, 5),
-            nn.Sigmoid()
+            nn.LogSoftmax(1)
         )
         
     def forward(self, x):
         return self.mnet(x)
     
 MODEL = MyCustomMobileNetV2()
-MODEL.load_state_dict(torch.load("./test_model/weights_best_with random.pth", map_location=torch.device('cpu')))
+MODEL.load_state_dict(torch.load("./test_model/weights_best.pth", map_location=torch.device('cpu')))
 
 Text = ""
 def predict(image_path, model):
@@ -56,7 +56,8 @@ def predict(image_path, model):
 
     model.eval()
     output = model(input)
-    output1 = output.detach().numpy()
+    output3 = torch.exp(output)
+    output1 = output3.detach().numpy()
     result = output1[0,0]
     
     if (output.argmax(1)) == 0:
