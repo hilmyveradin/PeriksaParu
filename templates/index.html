@@ -72,7 +72,7 @@
                 <br />
                 <span class="typed-text" data-typed-string="Prioritas kami"></span>
               </div>
-              <div class="hero-bio">Kami siap memeriksa paru-paru kamu.</div>
+              <div class="hero-bio">Identifikasi Penyakit TBC, Pneumonia, dan Covid-19 sekarang.</div>
             </div>
             <div class="col-12 col-md-6 col-lg-6"></div>
           </div>
@@ -99,8 +99,22 @@
                 <br>
                 <img class="mb-4" src="./static/images/{{image_loc}}" alt="" width="256" height="256">
                 <br>
-                <h3 class="font-body"> Hasil Prediksi: {{TextResult}} </h3>
-                <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
+                {% if TextResult == "COVID19" or TextResult == "PNEUMONIA" or TextResult == "TUBERKULOSIS" %}
+                  <h3 class="font-body"> Hasil Prediksi: <h3 class="font-body" style="color:#FF0000";> {{TextResult}} </h3> </h3>
+                  <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
+                  <br>
+                  <h3 class="h3 mb-3 font-weight-normal"> Konsultasi Dokter Sekarang: <a href="http://ipb.link/periksaparu"> Hubungi Dokter </a> </h3>
+                {% elif TextResult == "NORMAL" %}
+                  <h3 class="font-body"> Hasil Prediksi: <h3 class="font-body" style="color:#00FF00";> {{TextResult}} </h3> </h3>
+                  <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
+                  <br>
+                  <h3 class="h3 mb-3 font-weight-normal"> Selamat, kamu sehat. Tetap jaga kesehatan parumu ya! </h3>
+                {% else %}
+                  <h3 class="font-body"> Hasil Prediksi: {{TextResult}} </h3> </h3>
+                  <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
+                  <br>
+                  <h3 class="h3 mb-3 font-weight-normal"> Mohon masukkan gambar citra paru. </h3>
+                {%endif%}
                 {%endif%}
                 <br>
                 </form>
@@ -128,18 +142,12 @@
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="heading heading-1 mb-50 mt-30">
                 <h2 class="heading-title">Tentang Kami</h2>
-                <p class="heading-desc" style="text-align:justify"> PeriksaParu.com merupakan sebuah laman yang dibangun oleh 4 mahasiswa IPB University untuk kepentingan penelitian dan pengembangan. PeriksaParu.com hadir untuk membantu permasalahan masyarakat Indonesia, terutama daerah 3T, untuk mengatasi kurangnya tenaga medis mumpuni yang dapat mendiagnosa penyakit paru, yaitu TBC, Pneumonia, dan Covid-19. Hanya dengan mengunggah data rontgen toraks yang dimiliki pengguna, PeriksaParu.com dapat mendeteksi penyakit idapan pengguna. </p>
-	              <p class="heading-desc" style="text-align:justify">Saat pengguna terdeteksi mengidap penyakit paru yang disebutkan di atas, maka laman akan memberikan informasi seberapa besar kemungkinan penyakit tersebut mengidap di pengguna dengan disertai pemberian informasi kontak dokter yang dapat dihubungi untuk berkonsultasi lebih lanjut. Selain itu, PeriksaParu.com memiliki fitur fakta unik untuk mengedukasi pengguna seputar kesehatan paru . </p>
-	              <p class="heading-desc" style="text-align:justify"> Dengan adanya laman PeriksaParu.com, diharapkan dapat membantu masyarakat Indonesia terutama di daerah 3T untuk mendapatkan pendiagnosisan yang tepat tanpa bantuan ahli sehingga, lebih lanjut, dapat mewujudkan Indonesia tanpa penyakit paru dan menuju Indonesia yang lebih sehat di masa depan. </p>
+                <p class="heading-desc" style="text-align:justify">PeriksaParu.com merupakan sebuah laman yang dibangun oleh 4 mahasiswa IPB University untuk kepentingan penelitian dan pengembangan. PeriksaParu.com hadir untuk membantu permasalahan masyarakat Indonesia, terutama daerah 3T, untuk mengatasi kurangnya tenaga medis mumpuni yang dapat mendiagnosa penyakit paru, yaitu TBC, Pneumonia, dan Covid-19. Hanya dengan mengunggah data rontgen toraks yang dimiliki pengguna, PeriksaParu.com dapat mendeteksi penyakit idapan pengguna.</p>
+	              <p class="heading-desc" style="text-align:justify">PeriksaParu.com menggunakan metode deep learning untuk mengidentifikasi penyakit. Kami menggunakan 10.464 gambar yang terdiri dari Pneumonia, Covid, Tuberkulosis, paru-paru normal, dan gambar acak sebagai data latih model. Data diolah menggunakan teknologi Pytorch dengan arsitektur dasar MobileNetV2. Akurasi prediksi laman PeriksaParu.com adalah 96.85%</p>
               </div>
             </div>
             <!-- .col-md-6 end -->
             <div class="col-12 col-md-6 col-lg-6">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <br>
             <br>
             <br>
@@ -347,7 +355,7 @@
                 <div class="member-info">
                   <h5>Dr. Ambiyo Budiman <span>Spesialis Paru</span></h5>
                   <h6>
-                    <a href="tel:+61 452 200 126"> <i class="fa fa-phone"></i>+62 878 0999 2042</a>
+                    <a href="https://wa.link/h4uub4"> <i class="fa fa-phone"></i>+62 878 0999 2042</a>
                   </h6>
                 </div>
                 <!-- .member-info end -->
