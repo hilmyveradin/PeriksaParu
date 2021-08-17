@@ -51,6 +51,9 @@
                   <a data-scroll="scrollTo" href="#patients">Fakta Unik</a>
                 </li>
                 <li>
+                  <a data-scroll="scrollTo" href="#gejala">Periksa Gejala</a>
+                </li>
+                <li>
                   <a data-scroll="scrollTo" href="#doctors">Hubungi Dokter</a>
                 </li>
               </ul>
@@ -82,7 +85,7 @@
       </section>
       <!-- #slider end -->
       <!-- Feature #1 ============================================= -->
-      <section id="speciality" class="section feature feature-3 bg-white pb-80">
+      <section id="speciality" class="section feature feature-4 bg-white pb-80">
         <div class="container">
               <div class="heading heading-1 text-center">
                 <h2 class="heading-title">Periksa Parumu</h2>
@@ -103,7 +106,7 @@
                   <h3 class="font-body"> Hasil Prediksi: <h3 class="font-body" style="color:#FF0000";> {{TextResult}} </h3> </h3>
                   <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
                   <br>
-                  <h3 class="h3 mb-3 font-weight-normal"> Konsultasi Dokter Sekarang: <a href="http://ipb.link/periksaparu"> Hubungi Dokter </a> </h3>
+                  <h3 class="h3 mb-3 font-weight-normal"> Agar prediksi semakin akurat, mari periksa gejala sekarang: <a data-scroll="scrollTo" href="#gejala"> Periksa Gejala</a> </h3>
                 {% elif TextResult == "NORMAL" %}
                   <h3 class="font-body"> Hasil Prediksi: <h3 class="font-body" style="color:#00FF00";> {{TextResult}} </h3> </h3>
                   <h3 class="font-body"> Akurasi: {{prediction}}% </h3>
@@ -307,8 +310,126 @@
         <!-- .container End -->
       </section>
       <!-- #patients End-->
+      
+      <section id="gejala" class="section feature feature-4 bg-white pb-80">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+              <div class="heading heading-1 text-center">
+                <h2 class="heading-title">Periksa Gejala</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Panel #1 -->
+            <div class="col-12 col-md-4 col-lg-4">
+              <div class="feature-panel">
+                <div class="feature-img">
+                  <img src="./static/assets/images/icons/1.svg" alt="target">
+                </div>
+                <div class="feature-content">
+                  <h3>Covid-19</h3>
+                  <p> <b> Gejala yang paling umum: </b> <br>
+                    - Batuk kering <br>
+                    - Demam <br>
+                    - Kelelahan <br> <br>
+
+                    <b> Gejala yang sedikit tidak umum: </b> <br>
+                    - Diare <br>
+                    - Hilangnya indera perasa atau penciuman <br>
+                    - Konjungtivitis (mata merah) <br>
+                    - Nyeri tenggorokan <br>
+                    - Perubahan warna pada jari tangan/kaki <br>
+                    - Rasa tidak nyaman dan nyeri <br>
+                    - Ruam pada kulit <br>
+                    - Sakit kepala <br> <br>
+
+                    <b> Gejala serius: </b> <br>
+                    - Kesulitan bernapas atau sesak napas <br>
+                    - Nyeri dada atau rasa tertekan pada dada <br>
+                    - Hilangnya kemampuan bicara/bergerak <br>
+
+                    <br>
+                    <br>
+                    Sumber: dr. Merry Dame Cristy Pane (Alodokter.com)
+
+                  </p>
+                </div>
+              </div>
+              <!-- .feature-panel end -->
+            </div>
+            <!-- .col-md-4 end -->
+
+            <!-- Panel #2 -->
+            <div class="col-12 col-md-4 col-lg-4">
+              <div class="feature-panel">
+                <div class="feature-img">
+                  <img src="./static/assets/images/icons/2.svg" alt="target">
+                </div>
+                <div class="feature-content">
+                  <h3>Pneumonia</h3>
+                  <p>
+                    - Batuk berdahak warna kuning/hijau <br>
+                    - Batuk berdarah <br>
+                    - Batuk kering <br>
+                    - Demam <br>
+                    - Detak jantung meningkat <br>
+                    - Diare <br>
+                    - Lemas <br>
+                    - Mual atau muntah <br>
+                    - Nyeri dada saat menarik napas/batuk <br>
+                    - Selera makan menurun <br>
+                    - Sesak napas <br><br><br><br><br><br><br><br><br><br><br>
+                    Sumber: dr. Merry Dame Cristy Pane (Alodokter.com)
+                  </p>
+                </div>
+              </div>
+              <!-- .feature-panel end -->
+            </div>
+            <!-- .col-md-4 end -->
+
+            <!-- Panel #3 -->
+            <div class="col-12 col-md-4 col-lg-4">
+              <div class="feature-panel">
+                <div class="feature-img">
+                  <img src="./static/assets/images/icons/3.svg" alt="target">
+                </div>
+                <div class="feature-content">
+                  <h3>Tuberkulosis</h3>
+                  <p>
+                    - Batuk mengeluarkan darah <br>
+                    - Batuk yang berlangsung lama<br>
+                    - Berkeringat pada malam hari <br>
+                    - Demam dan menggigil <br>
+                    - Lemas <br>
+                    - Nyeri dada saat bernapas atau batuk <br>
+                    - Penurunan berat badan <br>
+                    - Tidak nafsu makan <br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    Sumber: dr. Tjin Willy (Alodokter.com)
+                  </p>
+                </div>
+              </div>
+              <!-- .feature-panel end -->
+            </div>
+            <!-- .col-md-4 end -->
+
+          </div>
+          <!-- .row end -->
+        
+        </div>
+        <br>
+        <br>
+        <br>
+      <div class="heading heading-1 text-center">
+        <h3 class="font-body"> Cocok? Hubungi Dokter <h3 class="font-body" style="color:#FF0000";> Segera! </h3> </h3>
+        <button class="btn btn--primary" style="height:50px;width:1080px" onclick="location.href='https://ipb.link/periksaparu'">Hubungi Dokter</button>
+      </div>
+        <!-- .container end -->
+      </section>
+      <!-- #doctors end -->
       <!-- Team Section ============================================= -->
-      <section id="doctors" class="team bg-white">
+      <section id="doctors" class="team bg-gray">
         <div class="container">
           <div class="row clearfix">
             <div class="col-12 col-md-12 col-lg-12">
@@ -365,16 +486,11 @@
             <!-- .col-md-3 end -->
 
             <!-- Member #3 -->
-            <div class="col-12 col-md-4 col-lg-4">
-              <!-- .member end -->
-            </div>
             <!-- .col-md-3 end -->
           </div>
         </div>
       </section>
-      <!-- #doctors end -->
       <!-- Footer ============================================= -->
-      <section id="consultation" class="section feature feature-2 bg-gray">
       <footer id="footerParallax" class="footer">
         <div class="footer-top">
           <div class="container">
@@ -434,7 +550,7 @@
             <div class="row">
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="footer-copyright">
-                  <span>&copy; PeriksaParu 2021, All Rights Reserved.</span>
+                  <span>&copy; Zytheme 2019, All Rights Reserved.</span>
                 </div>
               </div>
               <!-- .col-md-6 end -->
@@ -462,7 +578,6 @@
         </div>
         <!-- .footer-bottom end -->
       </footer>
-      </section>
       <!-- #footer end -->
     </div>
     <!-- #wrapper end -->
